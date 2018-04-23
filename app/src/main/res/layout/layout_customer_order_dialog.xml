@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.stampmemories.sectioned.cust_orders.CustomerOrderDialogViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:onClick="@{viewModel.onCloseClick()}"
+            android:tint="@color/black"
+            app:srcCompat="@drawable/ic_cancel" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.onViewDetail(context)}"
+            android:text="View Details"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/textsize_16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.onContactProvider(context)}"
+            android:text="Contact Provider"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/textsize_16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.onRequestRefund(context)}"
+            android:text="Request Refund"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/textsize_16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.onRequestRescheduling(context)}"
+            android:text="Request Rescheduling"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/textsize_16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{viewModel.onLeaveRating(context)}"
+            android:text="Leave Rating"
+            android:textAllCaps="true"
+            android:textColor="@color/dark_green"
+            android:textSize="@dimen/textsize_16dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,46 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "id": "1",
+      "name": "Lesson",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Music",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Travel",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Adventure",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Tutoring",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-5.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Swimming",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-6.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Photography",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-7.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Rafting",
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-8.jpg"
+    }
+  ]
+}

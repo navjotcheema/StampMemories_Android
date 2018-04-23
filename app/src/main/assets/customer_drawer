@@ -1,0 +1,68 @@
+{
+  "drawer": {
+    "sub_menu": [
+      {
+        "title": "Home",
+        "image": "home_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Settings",
+        "image": "settings_icon",
+        "sub_items": [
+          "General Information",
+          "Payment Information"
+        ]
+      },
+      {
+        "title": "Purchases",
+        "image": "purchases_icon",
+        "sub_items": [
+          "Orders"
+        ]
+      },
+      {
+        "title": "Funds",
+        "image": "funds_icon",
+        "sub_items": [
+          "Apply Gift Card",
+          "Send Gift Card"
+        ]
+      },
+      {
+        "title": "Communication",
+        "image": "comm_icon",
+        "sub_items": [
+          "Purchase Communication",
+          "Notification",
+          "Support"
+        ]
+      },
+      {
+        "title": "Invite a Friend",
+        "image": "invite_friend",
+        "sub_items": []
+      },
+      {
+        "title": "Change Password",
+        "image": "ic_padlock",
+        "sub_items": []
+      },
+      {
+        "title": "Switch to Provider",
+        "image": "user_switch_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Become a Provider",
+        "image": "profile_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Logout",
+        "image": "logout_icon",
+        "sub_items": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="orderHistoryViewModel"
+            type="com.stampmemories.sectioned.myorders.OrderHistoryViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context=".sectioned.myorders.OrderHistoryFragment">
+
+        <requestFocus />
+
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            app:iconifiedByDefault="false" />
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="0.5dp"
+                        android:background="@color/green"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Order Id"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="0.5dp"
+                        android:background="@color/green"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Customer"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="0.5dp"
+                        android:background="@color/green"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Amount"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="0.5dp"
+                        android:background="@color/green"
+                        android:gravity="center_vertical"
+                        android:padding="2dp"
+                        android:text="Status"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    bind:orders_history="@{orderHistoryViewModel.context}" />
+
+
+    </LinearLayout>
+</layout>

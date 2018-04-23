@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="backgroundCheckViewModel"
+            type="com.stampmemories.sectioned.background_check.BackgroundCheckViewModel" />
+
+        <import type="android.view.View" />
+
+        <import type="com.stampmemories.core.app.AppConstants.PAYMENT_OPTION" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".sectioned.background_check.BackgroundCheckFragment">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:onCheckedChanged="@{backgroundCheckViewModel.onCheckChanged}"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/rb_pay_with_card_sgc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{backgroundCheckViewModel.payment_option==PAYMENT_OPTION.EXISTING_CARD?true:false}"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pay with the credit card on your profile" />
+
+                    <RadioButton
+                        android:id="@+id/rb_pay_with_another_card_sgc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="@{backgroundCheckViewModel.payment_option==PAYMENT_OPTION.ADD_NEW_CARD?true:false}"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Pay with another Credit Card" />
+                </RadioGroup>
+
+                <com.stripe.android.view.CardInputWidget
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:focusableInTouchMode="true"
+                    bind:setCardData="@{backgroundCheckViewModel.payment_option}" />
+
+                <com.stampmemories.helper.MyCustomCheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:buttonTint="@color/green"
+                    android:text="Store the credit card on your profile for future use."
+                    android:visibility="@{backgroundCheckViewModel.payment_option==PAYMENT_OPTION.ADD_NEW_CARD?View.VISIBLE:View.GONE}" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/colorYellow"
+                android:fontFamily="@font/poppins_light"
+                android:padding="5dp"
+                android:text="@string/bg_check_notice"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <com.stampmemories.helper.MyCustomCheckBox
+                    android:id="@+id/cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green"
+                    app:layout_constraintTop_toTopOf="@id/bottom_button" />
+
+                <TextView
+                    android:id="@+id/txt_tnc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_light" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/buttonSize"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_active"
+                android:fontFamily="@font/poppins_light"
+                android:text="Start Background"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

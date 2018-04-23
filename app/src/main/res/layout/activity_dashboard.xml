@@ -1,0 +1,311 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="dashboardViewModel"
+            type="com.stampmemories.sectioned.dashboard.DashBoardViewModel" />
+
+        <import type="android.databinding.ObservableArrayList" />
+
+        <import type="com.stampmemories.core.app.AppConstants.USER_ROLES" />
+
+        <import type="com.stampmemories.core.app.MyApplication" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        bind:init_drawer="@{dashboardViewModel.context}"
+        tools:openDrawer="start">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppBarOverlay">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/custom_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/actionBarSize"
+                    android:background="@color/green"
+                    app:popupTheme="@style/PopupOverlay">
+
+                    <LinearLayout
+                        android:id="@+id/toolbar_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/actionBarSize"
+                        android:background="@color/green">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/searchbox_background"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.2"
+                                app:srcCompat="@drawable/ic_search_white_24dp" />
+
+                            <TextView
+                                android:id="@+id/search_textview"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/poppins_light"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:onClick="@{dashboardViewModel.onLocationClick()}"
+                                android:text="Select a location"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:context=".sectioned.dashboard.Dashboard">
+
+                <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:tools="http://schemas.android.com/tools"
+                    android:id="@+id/scroll_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:context="com.stampmemories.fragments.ParentCategoryFragment">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Activities"
+                            android:textColor="@color/green"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+                        <android.support.design.widget.TabLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:tabMode="scrollable"
+                            app:tabSelectedTextColor="@color/green"
+                            app:tabTextColor="@color/green"
+                            bind:activities="@{dashboardViewModel.activities}">
+
+                        </android.support.design.widget.TabLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_activities"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:nestedScrollingEnabled="false"
+                            bind:activities_list="@{dashboardViewModel.context}" />
+
+
+                        <Button
+                            android:id="@+id/btn_all_act"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/button_active"
+                            android:fontFamily="@font/poppins_light"
+                            android:onClick="@{dashboardViewModel.onShowAllClick()}"
+                            android:text="Show All"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Experiences"
+                            android:textColor="@color/green"
+                            android:textSize="25dp"
+                            android:textStyle="bold" />
+
+
+                        <android.support.design.widget.TabLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            app:tabMode="scrollable"
+                            app:tabSelectedTextColor="@color/green"
+                            app:tabTextColor="@color/green"
+                            bind:experiences="@{dashboardViewModel.experiences}" />
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_experiences"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:nestedScrollingEnabled="false"
+                            bind:experiences_list="@{dashboardViewModel.context}" />
+
+                        <Button
+                            android:id="@+id/btn_all_exp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/button_active"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Show All"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </ScrollView>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_map_white_24dp"
+                    app:fabSize="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onProfileClick"
+                        android:orientation="horizontal"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="30dp">
+
+                        <ImageView
+                            android:id="@+id/user_image"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/profile" />
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="5">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="vertical"
+                                android:paddingLeft="10dp">
+
+                                <TextView
+                                    android:id="@+id/user_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppins_light"
+                                    android:gravity="bottom"
+                                    android:text="Guest User"
+                                    android:textColor="@color/white"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/user_detail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/poppins_light"
+                                    android:text="Stamp Memories"
+                                    android:textColor="@color/white"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list_nav_menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?android:attr/selectableItemBackground"
+                        bind:menu_list="@{dashboardViewModel.currentUser==USER_ROLES.CUSTOMER? dashboardViewModel.getDrawer(USER_ROLES.CUSTOMER):dashboardViewModel.getDrawer(USER_ROLES.PROVIDER)}"
+                        bind:menu_recycler="@{dashboardViewModel.context}" />
+
+
+                </LinearLayout>
+
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

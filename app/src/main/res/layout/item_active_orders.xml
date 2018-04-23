@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/widget_height"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="bottom"
+                android:padding="2dp"
+                android:text="Instagram like hike in La Jolla" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:ems="9"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="bottom"
+                android:padding="2dp"
+                android:text="Lesson -> Dance -> Ballroom" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="5"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="bottom"
+                android:padding="2dp"
+                android:text="Created" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

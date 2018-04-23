@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileViewModel"
+            type="com.stampmemories.sectioned.profile.ProfileActivityViewModel" />
+
+        <variable
+            name="viewPager"
+            type="android.support.v4.view.ViewPager" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        tools:context=".sectioned.profile.ProfileActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/actionBarSize"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="Profile"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/actionBarSize"
+                android:layout_height="@dimen/actionBarSize"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{profileViewModel.onBackClick(context)}"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:srcCompat="@drawable/back_icon" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#a4c2f4"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="POTENTIAL: $124.64"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="#b6d7a8"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="EARNED: $182.20"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/textView43"
+                app:layout_constraintStart_toStartOf="@+id/textView43"
+                app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="#b1dede"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="POSTINGS: 10"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textView44"
+                app:layout_constraintStart_toStartOf="@+id/textView44"
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonSize"
+                android:background="@drawable/button_active"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="@{profileViewModel.onShareClick(context)}"
+                android:padding="5dp"
+                android:text="Share your passion"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/buttonSize"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_active"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="@{profileViewModel.onInitiateClick(context)}"
+                android:padding="5dp"
+                android:text="Initiate Transfer"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/button8"
+                app:layout_constraintStart_toStartOf="@+id/button8"
+                app:layout_constraintTop_toBottomOf="@+id/button8" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.design.widget.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabBackground="@drawable/tab_background"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/white"
+            app:tabTextColor="@color/grey"
+            bind:profile_tabs="@{viewPager}" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:profile_viewPager="@{context}" />
+
+    </LinearLayout>
+</layout>

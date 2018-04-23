@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center_horizontal"
+            android:text="453" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center_horizontal"
+            android:text="Transfer" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center_horizontal"
+            android:text="$20" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center_horizontal"
+            android:text="$3.60" />
+    </LinearLayout>
+</layout>

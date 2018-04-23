@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="genInfoViewModel"
+            type="com.stampmemories.sectioned.general_information.GeneralInfoViewModel" />
+
+        <variable
+            name="userModel"
+            type="com.stampmemories.sectioned.general_information.UserModel" />
+
+        <variable
+            name="currentUser"
+            type="android.databinding.ObservableField" />
+
+        <import type="com.stampmemories.core.app.AppConstants.USER_ROLES" />
+
+        <import type="com.stampmemories.core.app.AppConstants.USER_TYPE" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".sectioned.general_information.GeneralInformationActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/actionBarSize"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="General Information"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/actionBarSize"
+                android:layout_height="@dimen/actionBarSize"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{genInfoViewModel.onBackClick()}"
+                android:padding="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:srcCompat="@drawable/back_icon" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Email">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/emailGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:text="@{userModel.email}"
+
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="First Name"
+                    android:visibility="@{genInfoViewModel.userType==USER_TYPE.INDIVIDUAL?View.VISIBLE:View.GONE}">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/fNameGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{genInfoViewModel.userType==USER_TYPE.INDIVIDUAL?userModel.firstname:``}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Last Name"
+                    android:visibility="@{genInfoViewModel.userType==USER_TYPE.INDIVIDUAL?View.VISIBLE:View.GONE}">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/lastNameGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{genInfoViewModel.userType==USER_TYPE.INDIVIDUAL?userModel.lastname:``}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Enter Business Name"
+                    android:visibility="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?View.VISIBLE:View.GONE}">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/businessNameGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:text="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?userModel.business_name:``}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Representative First Name"
+                    android:visibility="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?View.VISIBLE:View.GONE}">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/repFNameGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:inputType="textPersonName"
+                        android:imeOptions="actionNext"
+                        android:text="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?userModel.representative_first_name:``}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Representative Last Name"
+                    android:visibility="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?View.VISIBLE:View.GONE}">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/repLNameGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:imeOptions="actionNext"
+                        android:text="@{genInfoViewModel.userType==USER_TYPE.BUSINESS?userModel.representative_last_name:``}" />
+                    android:inputType="textPersonName" />
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_provider_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:visibility="@{currentUser==USER_ROLES.PROVIDER?View.VISIBLE:View.GONE}">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/text_provider_base_url"
+                        android:textColor="@color/black" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Friendly URL">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/providerUrlGI"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:imeOptions="actionDone"
+                                android:inputType="textUri"
+                                android:text="@{currentUser==USER_ROLES.PROVIDER?userModel.profile_url:``}" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btn_set_url"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/button_active"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Set"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Dial Code"
+                        android:textSize="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="45dp"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="2dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="@+id/spinnerCodeGI"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:srcCompat="@drawable/us_flag"
+                        bind:countryFlag="@{genInfoViewModel.countryLocale}" />
+
+                    <Spinner
+                        android:id="@+id/spinnerCodeGI"
+                        style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:layout_width="100dp"
+                        android:layout_height="@dimen/widget_height"
+                        android:layout_marginStart="8dp"
+                        android:entries="@array/country_code"
+                        android:spinnerMode="dialog"
+                        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
+                        app:layout_constraintStart_toEndOf="@+id/imageView2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="@string/notice_verify_phone"
+                        android:textSize="12dp"
+                        android:visibility="@{currentUser==USER_ROLES.PROVIDER?View.VISIBLE:View.GONE}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnerCodeGI" />
+
+                    <RelativeLayout
+                        android:id="@+id/textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="8dp"
+                        android:hint="Phone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/spinnerCodeGI">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/phoneGI"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:afterTextChanged="@{genInfoViewModel.afterPhoneChanged}"
+                                android:imeOptions="actionNext"
+                                android:inputType="numberSigned"
+                                android:maxLength="10"
+                                android:text="@{userModel.phone}" />
+                            <!--android:padding="0dp"-->
+                            <!--android:paddingEnd="5dp"-->
+                            <!--android:paddingLeft="@dimen/field_padding_left"-->
+                            <!--android:paddingRight="5dp"-->
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btn_verify_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/button_active"
+                            android:fontFamily="@font/poppins_light"
+                            android:onClick="@{genInfoViewModel.onVerifyPhoneClick()}"
+                            android:text="@={genInfoViewModel.verifiedText}"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:visibility="@{currentUser==USER_ROLES.PROVIDER?View.VISIBLE:View.GONE}" />
+                    </RelativeLayout>
+
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:hint="Location">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/locationGI"
+                        style="@style/TextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:minHeight="@dimen/widget_height"
+                        android:text="@{userModel.location}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonSize"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/button_active"
+                    android:onClick="@{genInfoViewModel.onUpdateClick(emailGI,fNameGI,lastNameGI,businessNameGI,repFNameGI,repLNameGI,phoneGI,locationGI,providerUrlGI)}"
+                    android:text="Update"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

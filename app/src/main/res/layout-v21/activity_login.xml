@@ -1,0 +1,199 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.stampmemories.sectioned.login.LoginViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        tools:context=".sectioned.login.LoginActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="@color/green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="@{loginViewModel.onGuestClick()}"
+                android:text="Guest"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/widget_height"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/facebookBG"
+                android:drawableLeft="@drawable/fb_small"
+                android:drawablePadding="0dp"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="@{loginViewModel.onFacebookClick()}"
+                android:text="Facebook"
+                android:textColor="@color/white" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/googleBG"
+                android:drawableStart="@drawable/google_plus"
+                android:fontFamily="@font/poppins_light"
+                android:onClick="@{loginViewModel.onGoogleClick()}"
+                android:text="Google+"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    bind:smlogo="@{context}" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:fontFamily="@font/poppins_light"
+                        android:hint="Email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:text="@={loginViewModel.email}"
+                        android:textSize="14dp"
+                        app:validateType='@{"email"}'
+                        app:validateTypeAutoDismiss="@{true}"
+                        app:validateTypeMessage="@{@string/email_error}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/widget_height"
+                        android:fontFamily="@font/poppins_light"
+                        android:hint="Password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:text="@={loginViewModel.password}"
+                        android:textSize="14dp"
+                        app:validateEmpty="@{true}"
+                        app:validateEmptyAutoDismiss="@{true}"
+                        app:validateEmptyMessage="@{@string/password_error}"
+                        bind:transformation="@{null}" />
+                </android.support.design.widget.TextInputLayout>
+
+                <com.stampmemories.helper.MyCustomCheckBox
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:buttonTint="@color/green"
+                    android:checked="@={loginViewModel.doRemember}"
+                    android:gravity="center_vertical"
+                    android:text="Remember Me"
+                    android:textColor="@color/green" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonSize"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/button_active"
+                    android:fontFamily="@font/poppins_light"
+                    android:onClick="@{loginViewModel.onLoginClick()}"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:onClick="@{loginViewModel.onForgotpasswordClick()}"
+                    android:text="Forgot your Password?"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textsize_16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:gravity="center"
+                    android:onClick="@{loginViewModel.onSignupClick()}"
+                    android:text="Create an account? Sign up here!"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/textsize_16dp" />
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,78 @@
+{
+  "status": 200,
+  "message": "Success",
+  "data": [
+    {
+      "id": "1",
+      "name": "Instagram worthy hike in La Jola",
+      "location": "Havana",
+      "cost": "100",
+      "lat": 30.741482,
+      "lng": 76.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Monuments Tour",
+      "location": "Havana",
+      "cost": "200",
+      "lat": 30.741482,
+      "lng": 76.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Local Sight Seeing",
+      "location": "Havana",
+      "cost": "550",
+      "lat": 30.741482,
+      "lng": 60.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Photo with waves",
+      "location": "Havana",
+      "cost": "50",
+      "lat": 30.741482,
+      "lng": 70.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-4.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Sand Art Photography",
+      "location": "Havana",
+      "cost": "100",
+      "lat": 40.741482,
+      "lng": 96.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-5.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Beach Run Competition",
+      "location": "Havana",
+      "cost": "1000",
+      "lat": 30.741482,
+      "lng": 78.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-6.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Surfing Festival",
+      "location": "Havana",
+      "cost": "200",
+      "lat": 30.741482,
+      "lng": 76.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-7.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Bike Stunts Competition",
+      "location": "Havana",
+      "cost": "20",
+      "lat": 10.741482,
+      "lng": 76.768066,
+      "image": "https://www.stampmemoriesdev.com/assets/outer/images/sm-8.jpg"
+    }
+  ]
+}

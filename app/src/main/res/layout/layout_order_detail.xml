@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data></data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/close_dialog"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_cancel" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Type: Lesson -> Dance -> Ballroom"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Date: 01/23/2018"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Title: Instagram like hike in La Jolla"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Type: Lesson -> Dance -> Ballroom"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Is date specific: No"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="No. of sessions/sequnces: 4"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Individual/Group: Individual"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Status: Active"
+                android:textSize="@dimen/textsize_16dp" />
+
+            <TextView
+                android:id="@+id/btn_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="DETAILS"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_contact_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="CONTACT CUSTOMER "
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btn_issue_refund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="ISSUE REFUND"
+                android:textColor="@color/dark_green"
+                android:textSize="@dimen/textsize_16dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

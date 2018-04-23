@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="aboutViewModel"
+            type="com.stampmemories.sectioned.about.AboutActivityViewModel" />
+
+        <import type="com.stampmemories.core.app.AppConstants.DROPDOWN_TYPE" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".sectioned.about.AboutActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/actionBarSize"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center"
+                android:text="About"
+                android:textColor="@color/white"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="@dimen/actionBarSize"
+                android:layout_height="@dimen/actionBarSize"
+                android:layout_marginBottom="8dp"
+                android:padding="10dp"
+                android:layout_marginTop="8dp"
+                android:onClick="@{aboutViewModel.onBackClick()}"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:srcCompat="@drawable/back_icon" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/layout_business_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/provider_profile_image"
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:background="@drawable/border_black"
+                                android:padding="5dp"
+                                android:src="@drawable/logo_placeholder" />
+
+                            <TextView
+                                android:id="@+id/text_logo_add_update"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|end"
+                                android:background="@drawable/button_active"
+                                android:fontFamily="@font/poppins_light"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="Add"
+                                android:textColor="@color/white" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/are_you_insured" />
+
+                        <com.stampmemories.helper.InstantAutoComplete
+                            android:id="@+id/iac_insured"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/widget_height"
+                            android:focusable="false"
+                            android:hint="Select"
+                            bind:select="@{context}"
+                            bind:type="@{DROPDOWN_TYPE.INSURED}" />
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/insurance_policy">
+
+                            <EditText
+                                android:id="@+id/et_policy_name"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:focusable="false"
+                                android:inputType="text" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btn_select_policy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="35dp"
+                            android:layout_margin="5dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/button_active"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="Select"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white" />
+                    </RelativeLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="About your Business">
+
+                        <EditText
+                            android:id="@+id/about_business"
+                            style="@style/TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusableInTouchMode="true"
+                            android:minHeight="@dimen/widget_height"
+                            android:inputType="textMultiLine" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:hint="@string/business_type">
+
+                        <com.stampmemories.helper.InstantAutoComplete
+                            android:id="@+id/iac_select_business_type"
+                            style="@style/TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/widget_height"
+                            android:focusable="false"
+                            bind:select="@{context}"
+                            bind:type="@{DROPDOWN_TYPE.BUSINESS_TYPE}" />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="@font/poppins_light"
+                            android:padding="2dp"
+                            android:text="Please provide us your business address?"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="Address">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/address_about_us"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusableInTouchMode="true"
+                                android:inputType="textImeMultiLine"
+                                android:minHeight="@dimen/widget_height"
+                                android:minLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="City">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/et_city"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:focusableInTouchMode="true"
+                                android:inputType="textPostalAddress"
+                                android:minLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="State">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/et_state"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/poppins_light"
+                                android:inputType="textPostalAddress"
+                                android:minLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="Country">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/et_country"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/poppins_light"
+                                android:inputType="textPostalAddress"
+                                android:minLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:hint="Zip">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/et_zip"
+                                style="@style/TextInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/widget_height"
+                                android:focusableInTouchMode="true"
+                                android:fontFamily="@font/poppins_light"
+                                android:inputType="numberSigned"
+                                android:minLines="1" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/select_act_exp_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:drawableEnd="@drawable/ic_keyboard_arrow_right_white_24dp"
+                        android:drawableTint="@color/black"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="left|center_vertical"
+                        android:onClick="@{aboutViewModel.onSelectClick()}"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="Select Activities/Experiences you want to provide"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal_sub_menu" />
+
+
+                    <TextView
+                        android:id="@+id/select_age_group_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/ic_keyboard_arrow_right_white_24dp"
+                        android:drawableTint="@color/black"
+                        android:fontFamily="@font/poppins_light"
+                        android:gravity="center_vertical"
+                        android:onClick="@{aboutViewModel.onSelectAgeClick()}"
+                        android:text="Select age groups"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal_sub_menu" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_light"
+                            android:text="@string/company_experience" />
+
+                        <com.stampmemories.helper.InstantAutoComplete
+                            android:id="@+id/iac_company_experience"
+                            android:hint="Years"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/widget_height"
+                            android:focusable="false"
+                            bind:select="@{context}"
+                            bind:type="@{DROPDOWN_TYPE.COMPANY_EXPERIENCE}" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_about_us"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/buttonSize"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/button_active"
+                        android:fontFamily="@font/poppins_light"
+                        android:text="Update"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

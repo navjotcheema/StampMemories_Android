@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".sectioned.purchase.TnCActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="@color/green"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="Terms and Conditions"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/actionBarSize"
+            android:layout_height="@dimen/actionBarSize"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="onCloseTnC"
+            android:padding="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:srcCompat="@drawable/ic_cross" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:padding="10dp"
+            android:text="STAMP MEMORIES TERMS OF USE
+
+(Last updated 2/7/2018)
+
+The Site, Services, and App are provided by Stamp Memories, LLC, a Tennessee limited liability company with a principal place of business located at 2817 West End Avenue, Suite 126 N, Nashville, Tennessee 37203.
+
+SECTION I: DEFINITIONS, AGREEMENT TO BE BOUND
+
+1.1 Definitions.
+
+References to “Dispute” mean any claim, conflict, controversy, disagreement between the Parties arising out of, or related in any way to, these Terms (or any Terms, supplement or amendment contemplated by these Terms,) including, without limitation, any action in tort, contract or otherwise, at equity or at law, or any alleged breach, including, without limitation, any matter with respect to the meaning, effect, validity, performance, termination, interpretation or enforcement of these Terms or any Terms contemplated by the Terms.
+
+References to a “Customer” mean any person or entity who accepts a Provider’s offer of sale of a Product and promises to pay therefor.
+
+References to “Material Breach” mean any breach of these Terms upon the occurrence of which a reasonable person in the position of the non-breaching Party would wish to immediately terminate these Terms because of that breach.
+
+References to a “Mobile Application” mean any mobile software application designed, developed, and/or made available by us related to the Services and available through the iTunes, Google Play, and any other mobile software application stores.
+
+References to a “Product” mean a product designed, developed, manufactured, supplied, sold, and/or otherwise distributed by a Provider, including but not limited to goods, services, and/or experiences.
+
+References to a “Provider” mean a seller of goods, services, and/or experiences who advertises the same for sale via the Services either directly or through the use of a third-party API. For the avoidance of doubt, a Provider may be either an individual or entity.
+
+References to the “Services” mean any and all services offered by us, including but not limited to Product marketplace services offered via the Mobile Application and/or the Site.
+
+References to the “Site” mean the Web site bearing the URL www.stampmemories.com and/or any other Web sites owned and/or operated by us related to the Services.
+
+References to the “Terms” and/or “Agreement,” mean this, these Terms of Use as set forth herein.
+
+References to “us,” “we,” “our,” and/or “Stamp Memories,” mean Stamp Memories, LLC.
+
+References to “you,” and/or “User” mean the User of Services, whether as a Provider or Customer, as well as general users of our Site and Mobile Applicable.
+
+1.2.      Agreement to be Bound.
+
+The following Terms of Use, together with the relevant information set out on this Site, including any features and services available, such as RSS feeds, podcasts, video and photographs, publications, and other materials are subject to the Terms of Use set forth below. Please read them carefully as any of use of the Services, Site or Mobile Application constitutes an agreement, without acceptance, to be bound thereby by the User. By using the Services or otherwise accessing the Site or Mobile Application you represent that you are at least eighteen (18) years old (and in some jurisdictions twenty-one (21) years old) (or, alternatively, have the express permission of your parent or guardian to access and use the same,) have read and understand the Terms of Use, and that you agree to be bound by these Terms of Use as set forth below.
+
+These Terms of Use are subject to the Privacy Policy, which also governs your use of the Services, Site and the Mobile Application. In addition, each Provider shall have his, her, or its own Terms of Use, which bind all Customer transactions.
+
+The Parties acknowledge and agree that each Provider, Customer, subsidiary and affiliate of us shall be a third-party beneficiary to the Terms of Use and that such other persons and/or companies shall be entitled to directly enforce and rely upon any provision of these Terms of Use which confers a benefit upon them. No other parties shall be third party beneficiaries to these Terms of Use.
+
+SECTION II: GENERAL PROVISIONS
+
+2.1.      About Us; Stamp Memories not Provider or Employer; No Endorsement.
+
+Stamp Memories acts as a marketplace to allow Users to buy and sell Products. As an online marketplace provider, we do not offer for sale, provide, endorse or promote any Provider and/or Product, and we have no control over the quality, safety, morality or legality of any aspect of any Product listed for sale, the truth or accuracy of the listings, the ability of Providers to provide Products sold, the identity of any Provider or Customer, or the ability of Customers to pay for items purchased. We do not and cannot ensure that a Provider or Customer will actually complete a transaction. If you rely on any of the information provided by or on the Site or the Mobile Application, you do so solely at your own risk.
+
+You acknowledge and agree that we do not sell or purchase, offer to sell or purchase, invite to sell or purchase, or make or solicit any offers. IN ALL INSTANCES ALL SALES ARE ADVERTISED, SOLICITED, OFFERED, ACCEPTED, MADE, PROVIDED BY AND OTHERWISE DELIVERED BY VENDORS WITH WHOM A CUSTOMER DIRECTLY CONTRACTS. AT NO TIME WILL A CUSTOMER/SELLER RELATIONSHIP EXIST BETWEEN US. In all instances, any solicitation, invitation, offer, advertisement or communication is void where prohibited by law.
+
+Furthermore, STAMP MEMORIES SHALL AT NO TIME BE CONSTRUED AS AN EMPLOYER OF ANY PROVIDER. PROVIDERS ARE INDEPENDENT INDIVIDUALS AND/OR ENTITIES WHO OFFER PRODUCTS FOR SALE VIA THE SERVICES. Stamp Memories exercises no control or discretion over Providers except for such prohibited activities as may be set forth in this Agreement.
+
+2.2.      Accuracy, Completeness and Timeliness of Information.
+
+We are not responsible if information made available on the Site or the Mobile Application or via the Services is not accurate, complete or current. You acknowledge that the Site and the Mobile Application are provided for general information only and should not be relied upon or used as the sole basis for making decisions without consulting primary, more accurate, more complete or more timely sources of information. You acknowledge further that any reliance on the Site or the Mobile Application or any representation of a Provider or Customer is at your own risk.
+
+2.3.      Errors in Site or the Mobile Application.
+
+We do not warrant that any errors in the Site or the Mobile Application will be corrected.
+
+2.4.      Modifications and Changes to Terms of Use.
+
+We may modify, add to, suspend or delete these Terms of Use or other agreements, in whole or in part, in our sole discretion at any time, with such modifications, additions or deletions being immediately effective upon their posting to the Site or pushing to the Mobile Application. Your use of the Services, Site or the Mobile Application after modification, addition or deletion of these Terms of Use shall be deemed to constitute acceptance by you of the modification, addition or deletion.
+
+2.5.      Modifications and Changes to the Services, Site or the Mobile Application.
+
+We may modify, add to, suspend, or delete any aspect of the Services, Site or the Mobile Application, in whole or in part, at our sole discretion at any time, with such modifications, additions or deletions being immediately effective. Such modifications, additions or deletions may include but are not limited to content offered, hours of availability, and equipment needed for access or use.
+
+2.6.      Access to Services, Site or the Mobile Application.
+
+Though we try to make the Services, Site and the Mobile Application available twenty-four (24) hours a day, seven (7) days a week, except for planned down-time for maintenance, we do not warrant that the Services, Site or the Mobile Application will be at all times available.
+
+We do not warrant that your computer, tablet, and/or smartphone will be able to access and/or support the Site or the Mobile Application.
+
+2.7.      Right of Refusal, Limitation, Discontinuation, and Termination.
+
+
+
+We reserve the right to refuse to provide access to the Services, Site or the Mobile Application for any reason at any time in our sole and exclusive discretion. We may, in our sole and exclusive discretion, limit or cancel a User Account (as defined in Section 3.1) for any reason whatsoever. In the event that we make a change to or cancel an Account, we may attempt to notify you by contacting you at the e-mail address provided at the time your Account was created; however, the failure to do so shall not result in any liability, including liability for lost data deleted as a result of the Account termination.
+
+2.8.      Prohibited Uses of Services, Site and the Mobile Application.
+
+In addition to the other restrictions on use set forth herein, you agree and acknowledge that you shall not use the Services, Site or the Mobile Application: (a) for any unlawful purpose; (b) to solicit Users to perform or participate in any unlawful acts or to engage in acts that are unrelated to the purpose(s) of the Services, Site or the Mobile Application; (c) to violate any international or governmental regulations, rules, laws, or local ordinances; (d) to infringe upon or violate our intellectual property rights or the intellectual property rights of others; (e) to harass, abuse, insult, harm, defame, slander, disparage, intimidate, or discriminate based on gender, sexual orientation, religion, ethnicity, race, age, national origin, or disability; (f) to submit false or misleading information; (g) to upload or transmit viruses or any other type of malicious code that will or may be used in any way that will affect the functionality or operation of the Services, Site or the Mobile Application; (h) to collect or track the personal information of others; (i) to spam, phish, pharm, pretext, spider, crawl, or scrape; (j) for any obscene or immoral purpose; or (k) to interfere with or circumvent the security features of the Services, Site or the Mobile Application. We reserve the right to terminate your use of the Services, Site or the Mobile Application for violating any of the prohibited uses or for any other reason in our sole and exclusive decision, without recourse by you.
+
+
+
+SECTION III: ACCOUNTS, USE OF THE SERVICES
+
+3.1.      Online Accounts.
+
+Users shall be given the opportunity to register via an online registration form, invitation from a registered Users via social media, email, or text message, or via a third-party plugin to create a User account, (hereinafter your “Account,”) that will allow you to receive information from us and/or to participate in certain features of the Services, Site and the Mobile Application. We will use the information you provide in accordance with our Privacy Policy. By registering with us, you represent and warrant that all information you provide on the registration form is current, complete and accurate to the best of your knowledge. You agree to maintain and promptly update your registration information so that it remains current, complete and accurate. During the registration process, you may be required to choose a password. You acknowledge and agree that we may rely on this password to identify you. You are responsible for all use of your Account, regardless of whether you authorized such access or use, and for ensuring that all use of your Account complies fully with the provisions of these Terms of Use. Accounts may be cancelled at any time via the Account settings.
+
+3.2.      Sharing of Accounts, Transfer Prohibited.
+
+You agree you shall not share, sell, trade, or transfer your Account to any other person or entity.
+
+3.3.      Account Guidelines.
+
+
+
+The Site and the Mobile Application may contain the ability to communicate with other Users on one or more platforms, comments sections, discussion forums, Web sites, landing pages, social media outlets, sales channels, and/or other interactive features, (hereinafter 'Interactive Areas') in which Users and Third Parties may communicate. For the avoidance of doubt, the definition of an Interactive Area shall include Provider’s Product sales pages and communications between Providers and Customers. By participating in Interactive Areas, you agree and acknowledge that you:
+
+    Shall not upload, distribute or otherwise publish to the Site or the Mobile Application any libelous, defamatory, obscene, pornographic, abusive, or otherwise illegal material; and
+
+    Shall not threaten or verbally abuse other Users, use defamatory language, or deliberately disrupt discussions with repetitive messages, meaningless messages or spam and
+
+    Shall not to use language that abuses or discriminates on the basis of race, religion, nationality, gender, sexual preference, age, region, disability, etc. Hate speech of any kind is grounds for immediate and permanent suspension of access to all or part of the Interactive Areas and use of the Services, Site or the Mobile Application; and
+
+    Shall not personally attack another User. Personal attacks are a direct violation of these Terms of Use and are grounds for immediate and permanent suspension of access to all or part of the Interactive Areas and use of the Services, Site or the Mobile Application; and
+
+    Shall not use the Interactive Areas to distribute or otherwise publish any material containing any solicitation of funds, advertising or solicitation for goods or services except for the sale of goods in the scope envisioned by the express purpose of the Services, Site or the Mobile Application and
+
+    Shall not upload, post or otherwise transmit any content that violates any law or engage in activity that would constitute a criminal offense or give rise to a civil liability; and
+
+    Shall not post unauthorized commercial communications (such as spam); and
+
+    Shall not upload, post or otherwise transmit any content that advocates or provides instruction on illegal activity or discuss illegal activities with the intent to commit them; and
+
+    Shall not upload, post or otherwise transmit content that does not generally pertain to the designated topic or theme of any Interactive Area; and
+
+    Shall not impersonate any person or entity, including, but not limited to, any of our employees, or falsely state or otherwise misrepresent your affiliation with any person or entity; and
+
+    Shall not interfere with any other User's right to privacy, including by harvesting or collecting personally-identifiable information about other Users of our Interactive Areas or posting private information about a Third Party; and
+
+    Shall not engage in unlawful multi-level marketing, such as a pyramid scheme; and
+
+    Shall not upload, post or otherwise transmit any content, software or other materials which contain a virus or other harmful or disruptive component; and
+
+    Shall not interfere with or disrupt the Services, Site, the Mobile Application, the Interactive Areas or the servers or networks connected to the same, or disobey any requirements, procedures, policies or regulations of networks connected to the Services, Site, the Mobile Application, and/or the Interactive Areas; and
+
+    Shall not facilitate or encourage any violations of these Terms of Use or our policies.
+
+    Users agree further and acknowledge that any profile they create may be edited, removed, modified, published, transmitted, and displayed by us, and they waive any rights they may have in having the material altered or changed in a manner not agreeable to them.
+
+    3.4.      Rights in Submissions.
+
+    Should you submit, display, publish or otherwise post any content to an Interactive Area, including but not limited to listings and Terms of Sale (as defined in Section IV) (“Submissions,”) you agree to grant to us and our partners and affiliates a limited, non-exclusive, sub-licensable, worldwide, fully-paid, royalty free license to use, modify, publicly perform, publicly display, reproduce, and distribute such Submissions in any and all media now known or hereinafter developed for hosting, indexing, caching, distributing, tagging, marketing, and for all other lawful purposes without the requirement to make payment to or seek permission from you or to any third party.
+
+    You represent and warrant that you own or have a valid license to use any and all Submissions and otherwise have the right to grant the license set forth herein, and the displaying, publishing or posting of any Submissions does not and will not violate the privacy rights, publicity rights, copyrights, trademark rights, patents, contract rights or any other intellectual property rights or other rights of any person or entity.
+
+    3.5.      Right to Monitor.
+
+    We shall have the right (but not the obligation) to monitor your Account and all activity and communications in an Interactive Area in our sole and exclusive discretion.
+
+    3.5. Verification of Users.
+
+    All Users wishing to participate in the buying or selling of any Product shall be required to verify their identities to our satisfaction. This may include but is not limited to providing proof of identity (such as via a passport or other photo-bearing piece of identification) and residence (such as via a current utility bill.) Providers may additionally be required to provide us with tax-withholding information, including but not limited to a W-9 or similar forms if and when applicable. Notwithstanding the forgoing, Stamp Memories does not bear any responsibility and cannot be held liable for the verification or non-verification of a User’s identity.
+
+    All Providers are encouraged to formally have their Accounts verified by our background check provider, Accurate Background Checks. Instructions regarding the same may be accessed through a Provider’s Account settings. By registering to use the Services you consent to a background check being completed on you and the results thereof being provided to other Users and to us and our third-party affiliates and vendors.
+
+    SECTION IV: PROVIDER TERMS OF USE, GENERALLY
+
+    In addition to the other terms contained in these Terms of Use, the following Provider Terms of Use shall be applicable to all Providers of Products offered for sale via the Services.
+" />
+    </ScrollView>
+</LinearLayout>

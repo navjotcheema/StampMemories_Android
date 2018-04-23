@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/date_specific_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:id="@+id/layout_business_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widget_height"
+            android:focusable="false"
+            android:inputType="date"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="From"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+        <EditText
+            android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_height"
+           
+            android:focusable="false"
+            android:inputType="date"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="To"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+        <EditText
+            android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_height"
+           
+            android:focusable="false"
+            android:inputType="date"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="price/person"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+        <EditText
+            android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_height"
+           
+            android:focusableInTouchMode="true"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:text="Slots/person"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal_sub_menu" />
+
+        <EditText
+            android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_height"
+           
+            android:focusableInTouchMode="true"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal" />
+
+    </LinearLayout>
+</LinearLayout>
+

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age Groups"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <com.stampmemories.helper.InstantAutoComplete
+                    android:id="@+id/age_groups"
+                    android:layout_width="match_parent"
+                    android:fontFamily="@font/poppins_light"
+                    android:layout_height="match_parent"
+                    android:entries="@array/agegroup_list"></com.stampmemories.helper.InstantAutoComplete>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Level"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <com.stampmemories.helper.InstantAutoComplete
+                    android:id="@+id/level_documentdetail" android:fontFamily="@font/poppins_light"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/levels"></com.stampmemories.helper.InstantAutoComplete>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="Allow Activity Cancellation?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_sub_menu" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+              android:layout_height="@dimen/widget_height"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/cancelActivity_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/cancelActivity_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Describe Cancellation Policy"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:id="@+id/cancel_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_light"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="Allow Activity rescheduling?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_sub_menu" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+              android:layout_height="@dimen/widget_height"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/resc_activity_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/resc_activity_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Describe Rescheduling"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:id="@+id/desc_reschedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusableInTouchMode="true"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
+                    android:fontFamily="@font/poppins_light"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_images"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="Images"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_sub_menu" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_selected_images"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_submit_five"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_active"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</ScrollView>

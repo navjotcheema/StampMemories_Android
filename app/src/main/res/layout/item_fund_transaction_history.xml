@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+
+    <LinearLayout
+        android:id="@+id/itemView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_height"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0.2dp"
+            android:ems="5"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="bottom"
+            android:padding="2dp"
+            android:text="123"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0.2dp"
+
+            android:ems="6"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="bottom"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="$450"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0.2dp"
+
+            android:ems="6"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="bottom"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="$20"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="0.2dp"
+
+            android:ems="5"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="bottom"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="$10"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:ems="4"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="bottom"
+            android:padding="2dp"
+            android:singleLine="true"
+            android:text="$400"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+    </LinearLayout>
+</layout>

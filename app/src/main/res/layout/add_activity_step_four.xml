@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Is Activity date specific"
+                android:textColor="@color/black">
+
+                <com.stampmemories.helper.InstantAutoComplete
+                    android:id="@+id/spinner_date_specific"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/date_spec"
+                    android:fontFamily="@font/poppins_light"></com.stampmemories.helper.InstantAutoComplete>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Are the date specific sessions part of a sequence?"
+                android:textColor="@color/black">
+
+                <com.stampmemories.helper.InstantAutoComplete
+                    android:id="@+id/spinner_session_sequence"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/date_spec"
+                    android:fontFamily="@font/poppins_light"></com.stampmemories.helper.InstantAutoComplete>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/et_duration_each_session"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Duration of each session in minutes"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="How many sessions are included as part of the package?"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_sub_menu" />
+
+            <RadioGroup
+                android:id="@+id/radiogrp_session_options"
+                android:layout_width="match_parent"
+              android:layout_height="@dimen/widget_height"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="One"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+
+                <RadioButton
+                    android:id="@+id/radio_multiple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:text="Multiple"
+                    android:textSize="@dimen/text_size_normal_sub_menu" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_num_sessios_offered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the number of sessions offered with this package"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:id="@+id/et_num_sessions_offered"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_days_available_to_redeemed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:padding="2dp"
+                android:text="Days Available to be Redeemed"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_sub_menu" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list_available_dates"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/addMore_date"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_active"
+                android:fontFamily="@font/poppins_light"
+                android:text="+Add More"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/et_price_per_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Price(per person)"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/et_num_slots_per_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="No. of Slots / People can Attend "
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/et_num_specific_packages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="How many specific activity packages are for sale?"
+                android:padding="2dp"
+                android:textColor="@color/black">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/poppins_light"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_next_four"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_active"
+            android:fontFamily="@font/poppins_light"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

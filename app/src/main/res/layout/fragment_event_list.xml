@@ -1,0 +1,69 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="eventListViewModel"
+            type="com.stampmemories.sectioned.event.EventListViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".sectioned.event.EventListFragment">
+
+            <!-- TODO: Update blank fragment layout -->
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="@{eventListViewModel.showMap?View.GONE:View.VISIBLE}"
+                bind:all_events="@{eventListViewModel.context}" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/map_test" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="@{eventListViewModel.onMapToggleClick}"
+                android:src="@{eventListViewModel.getIcon}"
+                app:fabSize="normal"
+                app:layout_constraintEnd_toStartOf="@+id/floatingActionButton2"
+                tools:layout_editor_absoluteY="491dp" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:onClick="@{eventListViewModel.onFilterClick()}"
+                android:src="@drawable/ic_filter_list_white_24dp"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
+                tools:layout_editor_absoluteX="215dp" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="menuItemModel"
+            type="com.stampmemories.sectioned.dashboard.MenuItemModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/nav_menu_item"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/nav_menu_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:padding="5dp"
+                    android:tint="@color/white"
+                    bind:context="@{menuItemModel.context}"
+                    bind:src="@{menuItemModel.menuIcon}" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/nav_menu_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:text="@{menuItemModel.menuTitle}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_normal"
+                bind:set_right_arrow="@{menuItemModel.hasSubMenu}"
+                tools:text="Item name" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sub_menu_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{menuItemModel.expanded?View.VISIBLE:View.GONE}"
+            bind:sub_menu="@{menuItemModel.SubMenu}"
+            bind:submenu_list="@{menuItemModel.context}" />
+    </LinearLayout>
+</layout>

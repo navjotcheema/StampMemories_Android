@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="subMenuModel"
+            type="com.stampmemories.sectioned.dashboard.SubMenuItemModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sub_menu_height_normal"
+        android:background="@color/light_grey"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/circle_shape" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/nav_sub_menu_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.3"
+            android:gravity="center_vertical"
+            android:text="@{subMenuModel.subMenuTitle}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_normal_sub_menu"
+            tools:text="Item name" />
+
+    </LinearLayout>
+</layout>

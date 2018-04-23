@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="context"
+            type="android.app.Activity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".sectioned.background_check.BcStatusFragment">
+
+        <android.support.v7.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:focusableInTouchMode="true"
+            app:iconifiedByDefault="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widget_height"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0.1dp"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:padding="2dp"
+
+                android:text="Transaction"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0.1dp"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:padding="2dp"
+                android:text="Date"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="0.1dp"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:padding="2dp"
+                android:text="Step"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:fontFamily="@font/poppins_light"
+                android:gravity="center_vertical"
+                android:padding="2dp"
+                android:text="Cost"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            bind:list_bc_status="@{context}" />
+    </LinearLayout>
+</layout>

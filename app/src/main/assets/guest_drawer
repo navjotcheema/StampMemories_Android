@@ -1,0 +1,21 @@
+{
+  "drawer": {
+    "sub_menu": [
+      {
+        "title": "Home",
+        "image": "home_icon",
+        "sub_items": []
+      },
+      {
+        "title": "FAQ",
+        "image": "faq_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Login",
+        "image": "login_icon",
+        "sub_items": []
+      }
+    ]
+  }
+}

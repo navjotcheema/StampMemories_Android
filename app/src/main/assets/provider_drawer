@@ -1,0 +1,74 @@
+{
+  "drawer": {
+    "sub_menu": [
+      {
+        "title": "Home",
+        "image": "home_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Settings",
+        "image": "settings_icon",
+        "sub_items": [
+          "General Information",
+          "About",
+          "Documents",
+          "Payment Preferences",
+          "Background Check"
+        ]
+      },
+      {
+        "title": "Activities & Experiences",
+        "image": "act_exp_icon",
+        "sub_items": [
+          "My Activities",
+          "My Experiences",
+          "My Orders"
+        ]
+      },
+      {
+        "title": "Funds",
+        "image": "funds_icon",
+        "sub_items": [
+          "Credits",
+          "Earned Funds"
+        ]
+      },
+      {
+        "title": "Communication",
+        "image": "comm_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Notifications",
+        "image": "notifications_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Invite a Friend",
+        "image": "invite_friend",
+        "sub_items": []
+      },
+      {
+        "title": "FAQ",
+        "image": "faq_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Change Password",
+        "image": "ic_padlock",
+        "sub_items": []
+      },
+      {
+        "title": "Switch to Customer",
+        "image": "user_switch_icon",
+        "sub_items": []
+      },
+      {
+        "title": "Logout",
+        "image": "logout_icon",
+        "sub_items": []
+      }
+    ]
+  }
+}
